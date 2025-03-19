@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sekolah</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="page">
+        <header>
+            <div id="header">
+                <div id="section">
+                    <a href="index.html">
+                        <img src="fotosmk.jpg" alt="SMK" />
+                    </a>
+                    <span>SMK Bisa !!!<br />
+                        Belajar teknologi untuk membangun bangsa.</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">BERANDA</a></li>
+                        <li><a href="Profil.html">PROFIL</a></li>
+                        <li><a href="demokrasiku.html">DEMOKRASI SEKOLAH</a></li>
+                        <li class="current"><a href="kritik.html">KRITIK DAN SARAN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content">
+            <div class="form-container">
+                <h3>Kritik dan Saran</h3>
+                <p>Berikan kritik dan saranmu untuk kemajuan sekolah!</p>
+                <form id="kritikForm">
+                    <textarea name="komentar" id="komentar" cols="40" rows="5" placeholder="Silahkan isi kritik dan saranmu di sini..."></textarea>
+                    <br>
+                    <input type="submit" name="submit" value="Kirim">
+                </form>
+            </div>
+        </main>
+
+        <script>
+            document.getElementById('kritikForm').addEventListener('submit', function(e) {
+                e.preventDefault(); // Mencegah form dikirimkan secara default
+
+                // Ambil nilai komentar
+                const komentar = document.getElementById('komentar').value;
+
+                // Simpan komentar di localStorage
+                localStorage.setItem('kritik', komentar);
+
+                // Arahkan ke halaman lanjut.html
+                window.location.href = 'lanjut.html';
+            });
+        </script>
+
+    </div>
+</body>
+</html>

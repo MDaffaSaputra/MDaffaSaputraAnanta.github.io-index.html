@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sekolah</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="section">
+                <div> <a href="index.html"> <img src="fotosmk.jpg" alt="SMK" />  </a> </div>
+                <span> SMK Bisa !!! <br />
+                <br /> Belajar teknologi untuk membangun bangsa. </span>
+            </div>
+            <ul>
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="Profil.html">PROFIL</a></li>
+                <li class="current"><a href="demokrasiku.html">DEMOKRASI SEKOLAH</a></li>
+                <li><a href="kritik.html">KRITIK DAN SARAN</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <h3>Suara Demokrasi</h3>
+            <h2>Pemilihan Ketua Kelas dan Pengurus Kelas</h2>
+            <p>FORM Pemilihan Ketua Kelas dan Pengurus Kelas</p>
+            <form id="formPilih" onsubmit="return simpanData();">
+                <table>
+                    <tr>
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td><input type="text" id="nama" name="nama" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Ketua Kelas</td>
+                        <td>:</td>
+                        <td><input type="text" id="ketua" name="ketua" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Wakil Ketua Kelas</td>
+                        <td>:</td>
+                        <td><input type="text" id="wakil" name="wakil" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Sekretaris</td>
+                        <td>: </td>
+                        <td><input type="text" id="sekretaris" name="sekretaris" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Bendahara</td>
+                        <td>: </td>
+                        <td><input type="text" id="bendahara" name="bendahara" required /></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="SIMPAN">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function simpanData() {
+            // Mengambil data dari form
+            var nama = document.getElementById("nama").value;
+            var ketua = document.getElementById("ketua").value;
+            var wakil = document.getElementById("wakil").value;
+            var sekretaris = document.getElementById("sekretaris").value;
+            var bendahara = document.getElementById("bendahara").value;
+
+            // Menyimpan data ke localStorage
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("ketua", ketua);
+            localStorage.setItem("wakil", wakil);
+            localStorage.setItem("sekretaris", sekretaris);
+            localStorage.setItem("bendahara", bendahara);
+
+            // Menampilkan pesan
+            alert("TERIMA KASIH TELAH MENGISI EHE");
+
+            // Mengarahkan ke halaman lanjut.html
+            window.location.href = "lanjut.html";
+
+            return false; // Mencegah form untuk mengirim data ke server
+        }
+    </script>
+</body>
+</html>
